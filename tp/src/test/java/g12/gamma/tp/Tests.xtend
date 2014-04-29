@@ -56,7 +56,7 @@ class Tests {
 	}
 	
 	@Test
-	def testEquipo()
+	def void testEquipo()
 	{
 		partido.inscribir(jugador1, estandar)
 		partido.inscribir(jugador2, solidario)
@@ -103,7 +103,7 @@ class Tests {
 	}
 	
 	@Test(expected = typeof(JugadoresInsuficientesException))
-	def testJugadoresInsuficientes()
+	def void testJugadoresInsuficientes()
 	{
 		partido.inscribir(jugador1, estandar)
 		partido.inscribir(jugador2, solidario)
@@ -112,7 +112,7 @@ class Tests {
 	}
 	
 	@Test(expected = typeof(SinCupoException))
-	def testEquipoEstandarCompleto()
+	def void testEquipoEstandarCompleto()
 	{
 		partido.inscribir(jugador1, estandar)
 		partido.inscribir(jugador2, estandar)
