@@ -1,0 +1,6 @@
+/.settings
+/src/main/generated-sources
+/src/main/xtend-gen
+/src/test/generated-sources
+/src/test/xtend-gen
+/target
