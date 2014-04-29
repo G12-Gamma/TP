@@ -10,21 +10,27 @@ import g12.gamma.tp.exceptions.SinCupoException
 class Tests {
 
 	Partido partido
-	Jugador jugador1
-	Jugador jugador2
-	Jugador jugador3
-	Jugador jugador4
-	Jugador jugador5
-	Jugador jugador6
-	Jugador jugador7
-	Jugador jugador8
-	Jugador jugador9
-	Jugador jugador10
-	Jugador jugador11
-	Jugador jugador12
-	Jugador jugador13
-	Jugador jugador14
-	Jugador jugador15
+	Jugador jugadorEstandar1
+	Jugador jugadorEstandar2
+	Jugador jugadorEstandar3
+	Jugador jugadorEstandar4
+	Jugador jugadorEstandar5
+	Jugador jugadorEstandar6
+	Jugador jugadorEstandar7
+	Jugador jugadorEstandar8
+	Jugador jugadorEstandar9
+	Jugador jugadorEstandar10
+	Jugador jugadorEstandar11
+	Jugador jugadorSolidario1
+	Jugador jugadorSolidario2
+	Jugador jugadorSolidario3
+	Jugador jugadorSolidario4
+	Jugador jugadorSolidario5
+	Jugador jugadorCondicional1
+	Jugador jugadorCondicional2
+	Jugador jugadorCondicional3
+	Jugador jugadorCondicional4
+	Jugador jugadorCondicional5
 	TipoInscripcion estandar
 	TipoInscripcion solidario
 	TipoInscripcion condicional
@@ -34,21 +40,26 @@ class Tests {
 	{
 		partido = new Partido(new Date(10,4,2014, 20,0,0), "cancha1")
 		
-		jugador1 = new Jugador()
-		jugador2 = new Jugador()
-		jugador3 = new Jugador()
-		jugador4 = new Jugador()
-		jugador5 = new Jugador()
-		jugador6 = new Jugador()
-		jugador7 = new Jugador()
-		jugador8 = new Jugador()
-		jugador9 = new Jugador()
-		jugador10 = new Jugador()
-		jugador11 = new Jugador()
-		jugador12 = new Jugador()
-		jugador13 = new Jugador()
-		jugador14 = new Jugador()
-		jugador15 = new Jugador()
+		jugadorEstandar1 = new Jugador()
+		jugadorEstandar2 = new Jugador()
+		jugadorEstandar3 = new Jugador()
+		jugadorEstandar4 = new Jugador()
+		jugadorEstandar6 = new Jugador()
+		jugadorEstandar7 = new Jugador()
+		jugadorEstandar8 = new Jugador()
+		jugadorEstandar9 = new Jugador()
+		jugadorEstandar10 = new Jugador()
+		jugadorEstandar11 = new Jugador()
+		jugadorSolidario1 = new Jugador()
+		jugadorSolidario2 = new Jugador()
+		jugadorSolidario3 = new Jugador()
+		jugadorSolidario4 = new Jugador()
+		jugadorSolidario5 = new Jugador()
+		jugadorCondicional1 = new Jugador()
+		jugadorCondicional2 = new Jugador()
+		jugadorCondicional3 = new Jugador()
+		jugadorCondicional4 = new Jugador()
+		jugadorCondicional5 = new Jugador()
 		
 		estandar = new Estandar()
 		solidario = new Solidario()
@@ -58,21 +69,21 @@ class Tests {
 	@Test
 	def void testEquipo()
 	{
-		partido.inscribir(jugador1, estandar)
-		partido.inscribir(jugador2, solidario)
-		partido.inscribir(jugador3, condicional)
-		partido.inscribir(jugador4, estandar)
-		partido.inscribir(jugador5, solidario)
-		partido.inscribir(jugador6, condicional)
-		partido.inscribir(jugador7, estandar)
-		partido.inscribir(jugador8, solidario)
-		partido.inscribir(jugador9, condicional)
-		partido.inscribir(jugador10, estandar)
-		partido.inscribir(jugador11, solidario)
-		partido.inscribir(jugador12, condicional)
-		partido.inscribir(jugador13, estandar)
-		partido.inscribir(jugador14, solidario)
-		partido.inscribir(jugador15, condicional)
+		partido.inscribir(jugadorEstandar1, estandar)
+		partido.inscribir(jugadorSolidario1, solidario)
+		partido.inscribir(jugadorCondicional1, condicional)
+		partido.inscribir(jugadorEstandar2, estandar)
+		partido.inscribir(jugadorSolidario2, solidario)
+		partido.inscribir(jugadorCondicional2, condicional)
+		partido.inscribir(jugadorEstandar3, estandar)
+		partido.inscribir(jugadorSolidario3, solidario)
+		partido.inscribir(jugadorCondicional3, condicional)
+		partido.inscribir(jugadorEstandar4, estandar)
+		partido.inscribir(jugadorSolidario4, solidario)
+		partido.inscribir(jugadorCondicional4, condicional)
+		partido.inscribir(jugadorEstandar5, estandar)
+		partido.inscribir(jugadorSolidario5, solidario)
+		partido.inscribir(jugadorCondicional5, condicional)
 		
 		Assert.assertEquals(partido.inscriptos.size, 15)
 		
@@ -81,32 +92,32 @@ class Tests {
 		Assert.assertEquals(partido.jugadores.size, 10)
 
 		// Se prueba que esten incluidos todos los estandar
-		Assert.assertTrue(partido.jugadores.contains(jugador1))
-		Assert.assertTrue(partido.jugadores.contains(jugador4))
-		Assert.assertTrue(partido.jugadores.contains(jugador7))
-		Assert.assertTrue(partido.jugadores.contains(jugador10))
-		Assert.assertTrue(partido.jugadores.contains(jugador13))
+		Assert.assertTrue(partido.jugadores.contains(jugadorEstandar1))
+		Assert.assertTrue(partido.jugadores.contains(jugadorEstandar2))
+		Assert.assertTrue(partido.jugadores.contains(jugadorEstandar3))
+		Assert.assertTrue(partido.jugadores.contains(jugadorEstandar4))
+		Assert.assertTrue(partido.jugadores.contains(jugadorEstandar5))
 		
 		// Se prueba que esten incluidos todos los solidario
-		Assert.assertTrue(partido.jugadores.contains(jugador2))
-		Assert.assertTrue(partido.jugadores.contains(jugador5))
-		Assert.assertTrue(partido.jugadores.contains(jugador8))
-		Assert.assertTrue(partido.jugadores.contains(jugador11))
-		Assert.assertTrue(partido.jugadores.contains(jugador14))
+		Assert.assertTrue(partido.jugadores.contains(jugadorSolidario1))
+		Assert.assertTrue(partido.jugadores.contains(jugadorSolidario2))
+		Assert.assertTrue(partido.jugadores.contains(jugadorSolidario3))
+		Assert.assertTrue(partido.jugadores.contains(jugadorSolidario4))
+		Assert.assertTrue(partido.jugadores.contains(jugadorSolidario5))
 		
 		// Se prueba que no esten incluidos todos los condicionales (fueron desplazados por el resto)
-		Assert.assertTrue(!partido.jugadores.contains(jugador3))
-		Assert.assertTrue(!partido.jugadores.contains(jugador6))
-		Assert.assertTrue(!partido.jugadores.contains(jugador9))
-		Assert.assertTrue(!partido.jugadores.contains(jugador12))
-		Assert.assertTrue(!partido.jugadores.contains(jugador15))
+		Assert.assertTrue(!partido.jugadores.contains(jugadorCondicional1))
+		Assert.assertTrue(!partido.jugadores.contains(jugadorCondicional2))
+		Assert.assertTrue(!partido.jugadores.contains(jugadorCondicional3))
+		Assert.assertTrue(!partido.jugadores.contains(jugadorCondicional4))
+		Assert.assertTrue(!partido.jugadores.contains(jugadorCondicional5))
 	}
 	
 	@Test(expected = typeof(JugadoresInsuficientesException))
 	def void testJugadoresInsuficientes()
 	{
-		partido.inscribir(jugador1, estandar)
-		partido.inscribir(jugador2, solidario)
+		partido.inscribir(jugadorEstandar1, estandar)
+		partido.inscribir(jugadorSolidario1, solidario)
 		
 		partido.generarEquiposTentativos()
 	}
@@ -114,17 +125,17 @@ class Tests {
 	@Test(expected = typeof(SinCupoException))
 	def void testEquipoEstandarCompleto()
 	{
-		partido.inscribir(jugador1, estandar)
-		partido.inscribir(jugador2, estandar)
-		partido.inscribir(jugador3, estandar)
-		partido.inscribir(jugador4, estandar)
-		partido.inscribir(jugador5, estandar)
-		partido.inscribir(jugador6, estandar)
-		partido.inscribir(jugador7, estandar)
-		partido.inscribir(jugador8, estandar)
-		partido.inscribir(jugador9, estandar)
-		partido.inscribir(jugador10, estandar)
-		partido.inscribir(jugador11, estandar)
+		partido.inscribir(jugadorEstandar1, estandar)
+		partido.inscribir(jugadorEstandar2, estandar)
+		partido.inscribir(jugadorEstandar3, estandar)
+		partido.inscribir(jugadorEstandar4, estandar)
+		partido.inscribir(jugadorEstandar5, estandar)
+		partido.inscribir(jugadorEstandar6, estandar)
+		partido.inscribir(jugadorEstandar7, estandar)
+		partido.inscribir(jugadorEstandar8, estandar)
+		partido.inscribir(jugadorEstandar9, estandar)
+		partido.inscribir(jugadorEstandar10, estandar)
+		partido.inscribir(jugadorEstandar11, estandar)
 	}
 	
 }
