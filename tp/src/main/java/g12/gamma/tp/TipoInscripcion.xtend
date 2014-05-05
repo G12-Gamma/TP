@@ -5,8 +5,8 @@ abstract class TipoInscripcion {
 	int prioridad
 	
 	def inscripcion(Inscripcion inscripcion, Partido partido) {
-		if (partido.jugadores.size < Partido.MAX_JUGADORES) {
-			partido.jugadores.add(inscripcion.jugador)
+		if (partido.inscripcionesConfirm.size < Partido.MAX_JUGADORES) {
+			partido.inscripcionesConfirm.add(inscripcion)
 		}
 	}
 

@@ -89,28 +89,28 @@ class Tests {
 		
 		partido.generarEquiposTentativos()
 		
-		Assert.assertEquals(partido.jugadores.size, 10)
+		Assert.assertEquals(partido.inscripcionesConfirm.size, 10)
 
 		// Se prueba que esten incluidos todos los estandar
-		Assert.assertTrue(partido.jugadores.contains(jugadorEstandar1))
-		Assert.assertTrue(partido.jugadores.contains(jugadorEstandar2))
-		Assert.assertTrue(partido.jugadores.contains(jugadorEstandar3))
-		Assert.assertTrue(partido.jugadores.contains(jugadorEstandar4))
-		Assert.assertTrue(partido.jugadores.contains(jugadorEstandar5))
+		Assert.assertTrue(partido.inscripcionesConfirm.contains(jugadorEstandar1))
+		Assert.assertTrue(partido.inscripcionesConfirm.contains(jugadorEstandar2))
+		Assert.assertTrue(partido.inscripcionesConfirm.contains(jugadorEstandar3))
+		Assert.assertTrue(partido.inscripcionesConfirm.contains(jugadorEstandar4))
+		Assert.assertTrue(partido.inscripcionesConfirm.contains(jugadorEstandar5))
 		
 		// Se prueba que esten incluidos todos los solidario
-		Assert.assertTrue(partido.jugadores.contains(jugadorSolidario1))
-		Assert.assertTrue(partido.jugadores.contains(jugadorSolidario2))
-		Assert.assertTrue(partido.jugadores.contains(jugadorSolidario3))
-		Assert.assertTrue(partido.jugadores.contains(jugadorSolidario4))
-		Assert.assertTrue(partido.jugadores.contains(jugadorSolidario5))
+		Assert.assertFalse(partido.inscripcionesConfirm.contains(jugadorSolidario1))
+		Assert.assertFalse(partido.inscripcionesConfirm.contains(jugadorSolidario2))
+		Assert.assertFalse(partido.inscripcionesConfirm.contains(jugadorSolidario3))
+		Assert.assertFalse(partido.inscripcionesConfirm.contains(jugadorSolidario4))
+		Assert.assertFalse(partido.inscripcionesConfirm.contains(jugadorSolidario5))
 		
 		// Se prueba que no esten incluidos todos los condicionales (fueron desplazados por el resto)
-		Assert.assertTrue(!partido.jugadores.contains(jugadorCondicional1))
-		Assert.assertTrue(!partido.jugadores.contains(jugadorCondicional2))
-		Assert.assertTrue(!partido.jugadores.contains(jugadorCondicional3))
-		Assert.assertTrue(!partido.jugadores.contains(jugadorCondicional4))
-		Assert.assertTrue(!partido.jugadores.contains(jugadorCondicional5))
+		Assert.assertFalse(!partido.inscripcionesConfirm.contains(jugadorCondicional1))
+		Assert.assertFalse(!partido.inscripcionesConfirm.contains(jugadorCondicional2))
+		Assert.assertFalse(!partido.inscripcionesConfirm.contains(jugadorCondicional3))
+		Assert.assertFalse(!partido.inscripcionesConfirm.contains(jugadorCondicional4))
+		Assert.assertFalse(!partido.inscripcionesConfirm.contains(jugadorCondicional5))
 	}
 	
 	@Test(expected = typeof(JugadoresInsuficientesException))

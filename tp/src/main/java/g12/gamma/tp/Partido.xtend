@@ -19,7 +19,7 @@ class Partido {
 	List<Inscripcion> inscriptos = new ArrayList<Inscripcion>();
 	
 	@Property
-	List<Jugador> jugadores = new ArrayList<Jugador>();
+	List<Inscripcion> inscripcionesConfirm = new ArrayList<Inscripcion>();
 	
 	new(Date fecha, String lugar) {
 		this.fecha = fecha
@@ -29,7 +29,10 @@ class Partido {
 	def inscribir(Jugador jugador, TipoInscripcion tipoInscripcion) {
 		// Se valida que si se llego a la cantidad maxima de jugadores de en modo estandar (prioridad 1) no permita inscribir mas jugadores
 		if (inscriptos.filter [ i | i.tipoInscripcion.getPrioridad == 1 ].size < MAX_JUGADORES)
+		{
 			inscriptos.add(new Inscripcion(jugador, tipoInscripcion))
+			notificarAmigos(jugador, this)
+		}
 		else
 			throw new SinCupoException
 	}
@@ -48,7 +51,19 @@ class Partido {
 	}
 
 	private def armarEquiposEquitativos() {
-		// Logica para armas equipos equitativos
-		jugadores.forEach [ asignarEquipo(this) ]
+		// Logica para armar equipos equitativos
+		inscripcionesConfirm.forEach [ asignarEquipo(this) ]
 	}	
+	
+	def notificarAdmin(String mensaje) {
+		
+	}
+	
+	def notificarAmigos(Jugador jugador, Partido partido) {
+		
+	}
+	
+	def partidoConfirmado() {
+		if (inscripcionesConfirm.size == 10) notificarAdmin("Hay 10 confirmados") 
+	}
 }
